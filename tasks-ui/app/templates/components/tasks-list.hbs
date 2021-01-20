@@ -1,0 +1,49 @@
+<h2>{{page_title}}</h2>
+
+<table class="table_tasks">
+    {{#if confirmShown}}
+        <div id="ask" class="confirm-dialog">
+            <div>
+                Are you sure you want to {{confirmType}} task {{taskId}}?
+            </div>
+            <div>
+                <button class="confirm-submit" {{action "submitConfirm" taskId confirmType}}>OK</button>
+                <button class="confirm-cancel" {{action "cancelConfirm"}}>Cancel</button>
+            </div>
+        </div>
+    {{/if}}
+
+    <thead id="table_head">
+        <td colspan="3">
+            <div id="label">Tasks list</div>
+            {{#unless confirmShown}}
+                {{#link-to "new-task" class="button" id="add_btn" tagName='button' title="Add new task"}}&plus;{{/link-to}}
+            {{/unless}}
+        </td>
+        <!--<td class="td_header">done</td>
+        <td class="td_header">name</td>
+        <td class="td_header">action</td>-->
+    </thead>
+    <tbody class="tasks_table">
+        {{#each tasks.tasks as |task|}}
+            <tr class="task_row">
+                <td class="done_td">
+                    <input type="checkbox" name={{task.id}} checked={{task.done}} onchange={{action 'handleCheckboxChange' value='target'}}>
+                </td>
+                <td class={{if task.done 'done_task'}}>
+                    {{task.id}}.{{task.name}}
+                </td>
+                <td>
+                    <div id="delete_task" title="Click to delete task {{task.id}}" onclick={{action 'deleteTask' task.id}}>&#10006;</div>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                <div class="table_footer">Total:{{tasks.total}}</div> <div class="table_footer">Done:{{tasks.done}}</div> <div class="table_footer">To finish:{{tasks.tofinish}}</div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

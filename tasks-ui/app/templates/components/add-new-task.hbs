@@ -1,0 +1,10 @@
+<div class="add-new-div">
+    <h1>Add new task</h1>
+    <div>
+        <label for="">Write the name of the new task:</label>
+        {{input value=taskName}}
+    </div>
+    <div>
+        <button id="approve_btn" type="button" name="button" title="Approval" onclick={{action 'saveTask' taskName}}>SAVE</button>
+    </div>
+</div>

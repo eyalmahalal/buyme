@@ -1,0 +1,77 @@
+#table_head {
+    background-color: orange;
+}
+
+#table_head #label {
+    font-size: 20px;
+    padding: 5px;
+    float:left;
+}
+
+#table_head #add_btn {
+    background-color: White;
+    font-size: 25px;
+    margin-right: 2px;
+    float:right;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#approve_btn {
+    text-align: center;
+}
+
+#ask {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  border: 2px solid black;
+  background-color: #ddd;
+}
+
+#ask div {
+    vertical-align:top;
+    text-align: center;
+}
+
+#delete_task {
+    cursor: pointer;
+}
+
+.add-new-div {
+    width: 50%;
+}
+
+.add-new-div, h1 div{
+    text-align: center;
+}
+
+.task_row, td {
+  border-bottom:1pt solid black;
+}
+
+.done_td {
+    width: 10px;
+}
+
+.table_footer {
+    font-weight: bold;
+    padding-right: 40px;
+    float:right;
+}
+
+.td_header {
+    font-weight: bold;
+}
+
+.done_task {
+    text-decoration: line-through;
+}
+
+.task_row:nth-child(odd) {
+    background-color: White;
+}
+
+.task_row:nth-child(even) {
+    background-color: DarkGray;
+}
